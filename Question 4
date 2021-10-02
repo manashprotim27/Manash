@@ -1,0 +1,21 @@
+a=[0,0,2,2,3,3,8,2,7]
+d={} # Creating dictionary.
+def FreqElement(element):
+    count=0
+    for index in range(len(a)):
+        if a[index]==element:
+            count+=1
+    return count
+def RemoveFrequency(element):
+    index=a.index(element) 
+    new_list=a.pop(index)
+    print("After Removing  :")
+    print(a)
+
+for element in a:
+    d[element]=FreqElement(element)
+max_freq_value=max(sorted(d.values()))
+print("Maxfrequency is :",max_freq_value)
+for key in d:
+    if d[key]==max_freq_value:
+        RemoveFrequency(key)
