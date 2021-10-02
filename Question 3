@@ -1,0 +1,24 @@
+def reverseSting(b):
+    index = -1
+ 
+    # using loop from last to middle with step size -1
+    for i in range(len(b)-1, int(len(b)/2), -1):
+ 
+        # Checking value is alphanumeric or not.If yes I traversed further if no print the character. 
+        if b[i].isalpha():
+            temp = b[i]
+            while True:
+                index += 1
+                if b[index].isalpha():
+                    b[i] = b[index]
+                    b[index] = temp
+                    break
+    return b
+     
+
+#input the string required to reverse.
+a= input("Enter string")
+print ("input_string: ", a)
+#calling function reverseString
+a = reverseSting(list(a))
+print ("output string: ", "".join(a))
